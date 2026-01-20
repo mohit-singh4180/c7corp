@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { Mail, MapPin, Send, Linkedin, Twitter, Instagram, Github, LucideIcon } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin, Twitter, Instagram, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { siteConfig } from "@/config/site.config";
 
-const socialIconMap: Record<string, LucideIcon> = {
-  LinkedIn: Linkedin,
-  "Twitter/X": Twitter,
-  Instagram: Instagram,
-  GitHub: Github,
-};
+const socialLinks = [
+  { name: "LinkedIn", icon: Linkedin },
+  { name: "Twitter/X", icon: Twitter },
+  { name: "Instagram", icon: Instagram },
+  { name: "GitHub", icon: Github },
+];
 
 export function ContactSection() {
   const { toast } = useToast();
@@ -16,7 +15,7 @@ export function ContactSection() {
     name: "",
     email: "",
     company: "",
-    subject: siteConfig.contactSubjects[0],
+    subject: "General Inquiry",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,6 +24,7 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
@@ -36,7 +36,7 @@ export function ContactSection() {
       name: "",
       email: "",
       company: "",
-      subject: siteConfig.contactSubjects[0],
+      subject: "General Inquiry",
       message: "",
     });
     setIsSubmitting(false);
@@ -45,8 +45,8 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background accents */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px]" />
-      <div className="absolute top-1/4 left-0 w-[300px] h-[300px] rounded-full bg-accent/5 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[150px]" />
+      <div className="absolute top-1/4 left-0 w-[300px] h-[300px] rounded-full bg-accent/10 blur-[120px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -54,7 +54,7 @@ export function ContactSection() {
           <span className="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
             Contact
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -64,12 +64,12 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="p-8 md:p-10 rounded-3xl bg-gradient-card border border-border shadow-card">
-            <h3 className="font-display text-xl font-semibold mb-6 text-foreground">Send us a message</h3>
+          <div className="p-8 rounded-2xl bg-gradient-card border border-border">
+            <h3 className="font-display text-xl font-semibold mb-6">Send us a message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-foreground">
+                  <label className="block text-sm font-medium mb-2">
                     Full Name <span className="text-accent">*</span>
                   </label>
                   <input
@@ -77,12 +77,12 @@ export function ContactSection() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-foreground"
+                    className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-foreground">
+                  <label className="block text-sm font-medium mb-2">
                     Email Address <span className="text-accent">*</span>
                   </label>
                   <input
@@ -90,38 +90,42 @@ export function ContactSection() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-foreground"
+                    className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">Company Name</label>
+                <label className="block text-sm font-medium mb-2">
+                  Company Name
+                </label>
                 <input
                   type="text"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-foreground"
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                   placeholder="Your Company"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">Subject</label>
+                <label className="block text-sm font-medium mb-2">Subject</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-foreground"
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                 >
-                  {siteConfig.contactSubjects.map((subject) => (
-                    <option key={subject}>{subject}</option>
-                  ))}
+                  <option>General Inquiry</option>
+                  <option>Product Demo</option>
+                  <option>Partnership</option>
+                  <option>Support</option>
+                  <option>Other</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-foreground">
+                <label className="block text-sm font-medium mb-2">
                   Message <span className="text-accent">*</span>
                 </label>
                 <textarea
@@ -129,7 +133,7 @@ export function ContactSection() {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-background border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none text-foreground"
+                  className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -137,7 +141,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-primary font-semibold text-primary-foreground shadow-glow hover:shadow-lg transition-all duration-300 disabled:opacity-50 hover:-translate-y-0.5"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-gradient-primary font-semibold text-foreground hover:opacity-90 transition-opacity disabled:opacity-50"
               >
                 {isSubmitting ? (
                   "Sending..."
@@ -152,60 +156,59 @@ export function ContactSection() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             {/* Contact Details */}
-            <div className="p-8 rounded-2xl bg-gradient-card border border-border shadow-card">
-              <h3 className="font-display text-lg font-semibold mb-6 text-foreground">Contact Information</h3>
+            <div className="p-6 rounded-xl bg-muted/30 border border-border">
+              <h3 className="font-display text-lg font-semibold mb-4">Contact Information</h3>
               
-              <div className="space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-primary shrink-0 shadow-glow">
-                    <Mail className="w-5 h-5 text-primary-foreground" />
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-gradient-primary shrink-0">
+                    <Mail className="w-4 h-4 text-foreground" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Email</p>
-                    <a href={`mailto:${siteConfig.company.email}`} className="font-medium text-foreground hover:text-primary transition-colors">
-                      {siteConfig.company.email}
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <a href="mailto:support@c7corp.com" className="font-medium hover:text-primary transition-colors">
+                      support@c7corp.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-primary shrink-0 shadow-glow">
-                    <MapPin className="w-5 h-5 text-primary-foreground" />
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-gradient-primary shrink-0">
+                    <MapPin className="w-4 h-4 text-foreground" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Office Locations</p>
-                    {siteConfig.company.locations.map((location) => (
-                      <p key={location} className="font-medium text-foreground">{location}</p>
-                    ))}
+                    <p className="text-sm text-muted-foreground">Office Locations</p>
+                    <p className="font-medium">Dubai, UAE</p>
+                    <p className="font-medium">Haldwani/Delhi, India</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Social Media */}
-            <div className="p-8 rounded-2xl bg-gradient-card border border-border shadow-card">
-              <h3 className="font-display text-lg font-semibold mb-6 text-foreground">Follow Us</h3>
+            {/* Social Media QR Codes */}
+            <div className="p-6 rounded-xl bg-muted/30 border border-border">
+              <h3 className="font-display text-lg font-semibold mb-4">Follow Us</h3>
               
               <div className="grid grid-cols-2 gap-4">
-                {siteConfig.socialLinks.map((social) => {
-                  const Icon = socialIconMap[social.name] || Linkedin;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.url}
-                      className="group p-5 rounded-xl bg-background border border-border text-center transition-all duration-300 hover:border-primary/20 hover:shadow-card hover:-translate-y-1"
-                    >
-                      <div className="w-14 h-14 mx-auto mb-3 rounded-xl bg-muted flex items-center justify-center transition-all duration-300 group-hover:bg-gradient-primary group-hover:shadow-glow">
-                        <Icon className="w-6 h-6 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
-                      </div>
-                      <p className="text-sm font-medium text-foreground">{social.name}</p>
-                      <p className="text-xs text-muted-foreground">Coming Soon</p>
-                    </a>
-                  );
-                })}
+                {socialLinks.map((social) => (
+                  <div
+                    key={social.name}
+                    className="p-4 rounded-lg bg-muted/50 border border-border text-center hover:border-primary/50 transition-colors group"
+                  >
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-lg bg-gradient-card border border-border flex items-center justify-center group-hover:glow transition-shadow">
+                      <social.icon className="w-6 h-6 text-muted-foreground" />
+                    </div>
+                    <p className="text-sm font-medium">{social.name}</p>
+                    <p className="text-xs text-muted-foreground">Scan QR</p>
+                  </div>
+                ))}
               </div>
+              
+              <p className="text-xs text-muted-foreground text-center mt-4">
+                Scan to connect with us on social media
+              </p>
             </div>
           </div>
         </div>

@@ -1,14 +1,37 @@
-import { Rocket, Target, Shield, Smartphone, Zap, Globe, LucideIcon } from "lucide-react";
-import { siteConfig } from "@/config/site.config";
+import { Rocket, Target, Shield, Smartphone, Zap, Globe } from "lucide-react";
 
-const iconMap: Record<string, LucideIcon> = {
-  Rocket,
-  Target,
-  Shield,
-  Smartphone,
-  Zap,
-  Globe,
-};
+const features = [
+  {
+    icon: Rocket,
+    title: "Innovation First",
+    description: "Cutting-edge technology built for tomorrow",
+  },
+  {
+    icon: Target,
+    title: "Gen Z Focused",
+    description: "Designed for digital natives",
+  },
+  {
+    icon: Shield,
+    title: "Security First",
+    description: "Enterprise-grade security standards",
+  },
+  {
+    icon: Smartphone,
+    title: "Cross-Platform",
+    description: "Seamless experience across web and mobile",
+  },
+  {
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Optimized performance that scales",
+  },
+  {
+    icon: Globe,
+    title: "Global Reach",
+    description: "Serving businesses worldwide",
+  },
+];
 
 export function FeaturesSection() {
   return (
@@ -22,8 +45,8 @@ export function FeaturesSection() {
           <span className="inline-block text-sm font-semibold text-primary mb-4 tracking-wider uppercase">
             Why Choose Us
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Why Choose <span className="text-gradient">{siteConfig.company.name}?</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Why Choose <span className="text-gradient">C7 Corp?</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We combine innovation with reliability to deliver exceptional digital experiences.
@@ -32,30 +55,27 @@ export function FeaturesSection() {
 
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {siteConfig.features.map((feature, index) => {
-            const Icon = iconMap[feature.icon] || Rocket;
-            return (
-              <div
-                key={feature.title}
-                className="group p-8 rounded-2xl bg-gradient-card border border-border shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-primary/20"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <div className="flex items-start gap-5">
-                  <div className="p-4 rounded-2xl bg-gradient-primary shrink-0 shadow-glow transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-lg mb-2 text-foreground">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+          {features.map((feature, index) => (
+            <div
+              key={feature.title}
+              className="group p-6 rounded-xl bg-muted/30 border border-border hover:border-primary/50 hover:bg-muted/50 transition-all duration-300"
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-gradient-primary shrink-0 group-hover:glow transition-shadow">
+                  <feature.icon className="w-6 h-6 text-foreground" />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
