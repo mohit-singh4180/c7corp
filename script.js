@@ -65,23 +65,40 @@ if (contactForm) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending...';
         
-        // Simulate form submission (replace with actual API call if needed)
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Show success message
-        contactForm.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-        
-        // Reset form
-        contactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        
-        // Hide success message after 5 seconds and show form again
-        setTimeout(() => {
-            formSuccess.classList.add('hidden');
-            contactForm.classList.remove('hidden');
-        }, 5000);
+        try {
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Send to Web3Forms API
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                // Show success message
+                contactForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds and show form again
+                setTimeout(() => {
+                    formSuccess.classList.add('hidden');
+                    contactForm.classList.remove('hidden');
+                }, 5000);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            // alert('There was an error sending your message. Please try again.');
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }
     });
 }
 
