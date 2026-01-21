@@ -1,26 +1,597 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="C7Corp App Generated Project" />
-    <meta name="author" content="C7Corp App" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C7 Corp - Innovative Solutions for Modern Businesses</title>
+    <meta name="description" content="C7 Corp - Empowering Gen Z & Gen Alpha with next-generation apps that transform how you connect, work, and grow.">
+    <meta name="author" content="C7 Corp">
+    
+    <meta property="og:title" content="C7 Corp - Innovative Solutions for Modern Businesses">
+    <meta property="og:description" content="Empowering Gen Z & Gen Alpha with next-generation apps">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://c7corp.lovable.app/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C7 Corp">
+    <meta name="twitter:image" content="https://c7corp.lovable.app/og-image.png">
+    
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">C7</div>
+                <span class="logo-text">Corp</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <a href="#contact" class="cta-btn desktop-only">Get Early Access</a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <svg class="menu-icon" id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="close-icon hidden" id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden" id="mobileMenu">
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#products" class="mobile-nav-link">Products</a>
+            <a href="#features" class="mobile-nav-link">Features</a>
+            <a href="#team" class="mobile-nav-link">Team</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <a href="#contact" class="cta-btn mobile-cta">Get Early Access</a>
+        </div>
+    </nav>
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="C7Corp App" />
-    <meta property="og:description" content="C7Corp App Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <img src="hero-bg.jpg" alt="Abstract tech background" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-glow"></div>
+        
+        <div class="container hero-content">
+            <div class="hero-inner">
+                <div class="badge animate-fade-in-up">
+                    <span class="badge-dot"></span>
+                    <span>Launching Soon</span>
+                </div>
+                
+                <h1 class="hero-title animate-fade-in-up delay-1">
+                    Innovative Solutions for <span class="text-gradient">Modern Businesses</span>
+                </h1>
+                
+                <p class="hero-subtitle animate-fade-in-up delay-2">
+                    Empowering Gen Z & Gen Alpha with next-generation apps that transform how you connect, work, and grow.
+                </p>
+                
+                <div class="hero-buttons animate-fade-in-up delay-3">
+                    <a href="#contact" class="cta-btn glow">Get Early Access</a>
+                    <a href="#about" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator animate-float">
+                <div class="scroll-mouse">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="glow-bg glow-right"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Us</span>
+                <h2 class="section-title">About <span class="text-gradient">C7 Corp</span></h2>
+            </div>
+            
+            <div class="mission-card">
+                <div class="mission-glow"></div>
+                <div class="mission-header">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Our Mission</h3>
+                </div>
+                <blockquote class="mission-quote">
+                    "Empowering the next generation through cutting-edge technology. At C7 Corp, we believe in creating accessible, intelligent, and transformative digital experiences that connect people, simplify complexity, and drive innovation for a better tomorrow."
+                </blockquote>
+            </div>
+            
+            <p class="about-description">
+                C7 Corp is a forward-thinking technology company dedicated to building innovative web and mobile applications for modern businesses. We combine creativity with cutting-edge technology to deliver solutions that resonate with the digital-native generation.
+            </p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h4>Innovation First</h4>
+                    <p>Pioneering solutions that push technological boundaries</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4>Gen Z & Alpha</h4>
+                    <p>Designed for the digital-native generation</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h4>Global Reach</h4>
+                    <p>Serving businesses across Dubai & India</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Products Section -->
+    <section id="products" class="section section-alt">
+        <div class="glow-bg glow-left glow-secondary"></div>
+        <div class="glow-bg glow-right glow-accent"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Products</span>
+                <h2 class="section-title">Building the <span class="text-gradient">Future</span></h2>
+                <p class="section-subtitle">Discover our upcoming suite of innovative applications designed to transform how modern businesses operate.</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Coming Soon</div>
+                    <div class="product-image">
+                        <img src="product-connect.jpg" alt="C7 Connect">
+                        <div class="product-image-overlay"></div>
+                    </div>
+                    <div class="product-content">
+                        <h3>C7 Connect</h3>
+                        <p>A revolutionary mobile platform connecting businesses with their customers through intelligent automation and seamless experiences.</p>
+                        <div class="subscription-note">
+                            <span class="dot"></span>
+                            <span>Available via subscription</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">Coming Soon</div>
+                    <div class="product-image">
+                        <img src="product-workspace.jpg" alt="C7 Workspace">
+                        <div class="product-image-overlay"></div>
+                    </div>
+                    <div class="product-content">
+                        <h3>C7 Workspace</h3>
+                        <p>Transform your workflow with our AI-powered productivity suite designed for distributed teams and modern enterprises.</p>
+                        <div class="subscription-note">
+                            <span class="dot"></span>
+                            <span>Available via subscription</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="glow-bg glow-center"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">Why Choose <span class="text-gradient">C7 Corp?</span></h2>
+                <p class="section-subtitle">We combine innovation with reliability to deliver exceptional digital experiences.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Innovation First</h4>
+                        <p>Cutting-edge technology built for tomorrow</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Gen Z Focused</h4>
+                        <p>Designed for digital natives</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Security First</h4>
+                        <p>Enterprise-grade security standards</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Cross-Platform</h4>
+                        <p>Seamless experience across web and mobile</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Lightning Fast</h4>
+                        <p>Optimized performance that scales</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Global Reach</h4>
+                        <p>Serving businesses worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section section-alt">
+        <div class="glow-bg glow-left glow-secondary"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">Meet Our <span class="text-gradient">Team</span></h2>
+                <p class="section-subtitle">A passionate team dedicated to building the future of technology.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>Team Member</h4>
+                    <span class="team-role">CEO & Founder</span>
+                    <p>Building the future together</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>Team Member</h4>
+                    <span class="team-role">CTO</span>
+                    <p>Building the future together</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>Team Member</h4>
+                    <span class="team-role">Head of Product</span>
+                    <p>Building the future together</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>Team Member</h4>
+                    <span class="team-role">Lead Designer</span>
+                    <p>Building the future together</p>
+                </div>
+            </div>
+            
+            <div class="team-cta">
+                <p>Interested in joining our team?</p>
+                <a href="#contact">Get in touch →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="glow-bg glow-right"></div>
+        <div class="glow-bg glow-left glow-accent"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-form-card">
+                    <h3>Send us a message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name <span class="required">*</span></label>
+                                <input type="text" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" name="company" placeholder="Your Company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <select name="subject">
+                                <option>General Inquiry</option>
+                                <option>Product Demo</option>
+                                <option>Partnership</option>
+                                <option>Support</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Message <span class="required">*</span></label>
+                            <textarea name="message" rows="4" required placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-btn submit-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div class="form-success hidden" id="formSuccess">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h4>Message Sent!</h4>
+                        <p>Thank you for reaching out! We'll get back to you within 24-48 hours.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="info-item">
+                            <div class="icon-box small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <a href="mailto:support@c7corp.com">support@c7corp.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="icon-box small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="info-label">Office Locations</span>
+                                <p>Dubai, UAE</p>
+                                <p>Haldwani/Delhi, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Follow Us</h3>
+                        
+                        <div class="social-grid">
+                            <div class="social-card">
+                                <div class="qr-placeholder">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <span>LinkedIn</span>
+                                <span class="qr-label">Scan QR</span>
+                            </div>
+                            
+                            <div class="social-card">
+                                <div class="qr-placeholder">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                    </svg>
+                                </div>
+                                <span>Twitter/X</span>
+                                <span class="qr-label">Scan QR</span>
+                            </div>
+                            
+                            <div class="social-card">
+                                <div class="qr-placeholder">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                </div>
+                                <span>Instagram</span>
+                                <span class="qr-label">Scan QR</span>
+                            </div>
+                            
+                            <div class="social-card">
+                                <div class="qr-placeholder">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </div>
+                                <span>GitHub</span>
+                                <span class="qr-label">Scan QR</span>
+                            </div>
+                        </div>
+                        
+                        <p class="social-note">Scan to connect with us on social media</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">C7</div>
+                        <span class="logo-text">Corp</span>
+                    </div>
+                    <p>Innovative solutions for modern businesses</p>
+                    <span class="copyright">© 2024-2025 C7 Corp. All rights reserved.</span>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal & Compliance</h4>
+                    <ul>
+                        <li><a href="#">Business Registration</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <h5>Disclaimers & Legal Notices</h5>
+                
+                <p><strong>General Disclaimer:</strong> The information provided on this website is for general informational purposes only. While we strive to keep the information accurate and up-to-date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is strictly at your own risk.</p>
+                
+                <p><strong>No Professional Advice:</strong> The content on this website does not constitute professional, legal, financial, or technical advice. Users should consult with appropriate professionals before making business decisions.</p>
+                
+                <p><strong>Product Availability:</strong> Products marked as "Coming Soon" are in development. Features, pricing, and availability are subject to change without notice. Subscription details will be provided upon product launch.</p>
+                
+                <p><strong>Intellectual Property:</strong> All content, logos, designs, and materials on this website are the intellectual property of C7 Corp and are protected by copyright, trademark, and other intellectual property laws in India and internationally. Unauthorized use, reproduction, or distribution is strictly prohibited.</p>
+                
+                <p><strong>Limitation of Liability:</strong> In no event shall C7 Corp, its directors, employees, or affiliates be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of your access to or use of this website or any products or services offered.</p>
+                
+                <p><strong>Privacy & Data Protection:</strong> C7 Corp is committed to protecting your privacy in compliance with applicable data protection laws.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
