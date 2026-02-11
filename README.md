@@ -1,119 +1,117 @@
+🚀 C7 Corp — Modern Business Landing Page
 
-# C7 Corp - Innovative Solutions for Modern Businesses
+A sleek and professional business landing page built using React, TypeScript, and Vite.
+Designed to represent a modern digital company showcasing products, services, team, and contact information in a clean SaaS-style interface.
 
-![C7 Corp Logo](https://c7corp.com/logo.png)
+✨ Features
 
-C7 Corp is a forward-thinking technology company dedicated to building innovative web and mobile applications for modern businesses. We combine creativity with cutting-edge technology to deliver solutions that resonate with the digital-native generation, empowering Gen Z & Gen Alpha with next-generation apps that transform how you connect, work, and grow.
+⚡ Fast setup with Vite + React + TypeScript
 
-## 🚀 Our Mission
+🎨 Modern SaaS-style UI
 
-Empowering the next generation through cutting-edge technology. At C7 Corp, we believe in creating accessible, intelligent, and transformative digital experiences that connect people, simplify complexity, and drive innovation for a better tomorrow.
+📱 Fully responsive on all devices
 
-## 📱 Our Products
+🧭 Smooth section-based navigation
 
-### C7 Connect
-A revolutionary mobile platform connecting businesses with their customers through intelligent automation and seamless experiences.
+♻️ Reusable component structure
 
-### C7 Workspace
-Transform your workflow with our AI-powered productivity suite designed for distributed teams and modern enterprises.
+📬 Functional contact form integration ready
 
-*Both products are currently in development and launching soon.*
+🌈 Gradient accents and clean typography
 
-## 🛠️ Tech Stack
+🧩 Sections Included
 
-This project is built with modern web technologies:
+Hero Section
 
-- **Frontend Framework:** React 18 with TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **UI Components:** shadcn/ui with Radix UI primitives
-- **State Management:** TanStack Query for server state
-- **Form Handling:** React Hook Form with Zod validation
-- **Testing:** Vitest
-- **Linting:** ESLint
-- **Package Manager:** npm/bun
+About Company
 
-## 🚀 Getting Started
+Products / Services
 
-### Prerequisites
+Features / Why Choose Us
 
-- Node.js (v18 or higher)
-- npm or bun
+Team Members
 
-### Installation
+Contact Form
 
-1. **Clone the repository**
-   ```bash
-   git clone <YOUR_GIT_URL>
-   cd c7corp
-   ```
+Footer
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   bun install
-   ```
+🛠️ Tech Stack
 
-3. **Start the development server**
-   ```bash
-   npm run dev
-   # or
-   bun run dev
-   ```
+React — UI Library
 
-4. **Open your browser**
+TypeScript — Type Safety
 
-   Navigate to `http://localhost:5173` to see the application.
+Vite — Fast Build Tool
 
-### Available Scripts
+Tailwind CSS — Styling
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run build:dev` - Build for development
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run test` - Run tests once
-- `npm run test:watch` - Run tests in watch mode
+Lucide Icons — Icons
 
-## 📁 Project Structure
-
-```
+📁 Project Structure
 src/
-├── components/          # Reusable UI components
-│   ├── ui/             # shadcn/ui components
-│   ├── HeroSection.tsx
-│   ├── AboutSection.tsx
-│   ├── ProductsSection.tsx
-│   ├── FeaturesSection.tsx
-│   ├── TeamSection.tsx
-│   ├── ContactSection.tsx
-│   └── ...
-├── pages/              # Page components
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions
-└── assets/             # Static assets
-```
+│
+├── components/     # Reusable UI components
+├── sections/       # Page sections (Hero, About, Contact, etc.)
+├── assets/         # Images and static files
+├── lib/            # Utility functions
+├── types/          # TypeScript types
+└── main.tsx        # App entry point
 
-## 🎨 Design System
+🚀 Getting Started
+1️⃣ Clone Repository
+git clone https://github.com/your-username/c7-corp-landing.git
+cd c7-corp-landing
 
-The application uses a custom design system built on top of Tailwind CSS with:
+2️⃣ Install Dependencies
+npm install
 
-- Custom gradient backgrounds
-- Animated components
-- Responsive design
-- Dark/light theme support
-- Accessibility-first approach
+3️⃣ Run Development Server
+npm run dev
 
-## 🤝 Contributing
 
-We welcome contributions! Please see our contributing guidelines for details.
+App will run at:
 
-## 📞 Contact
+http://localhost:8080
 
-- Website: [c7corp.com](https://c7corp.com)
-- Email: contact@c7corp.com
+🏗️ Production Build
+npm run build
 
-## 📄 License
 
-This project is private and proprietary to C7 Corp.
+Preview build:
+
+npm run preview
+
+🌍 Deploy to GitHub Pages
+Step 1 — Update vite.config.ts
+export default defineConfig({
+  base: "/your-repo-name/",
+})
+
+Step 2 — Install gh-pages
+npm install gh-pages --save-dev
+
+Step 3 — Add Scripts in package.json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist"
+}
+
+Step 4 — Deploy
+npm run build
+npm run deploy
+
+📬 Contact Form
+
+You can integrate:
+
+Web3Forms
+
+EmailJS
+
+Custom backend API
+
+📄 License
+
+MIT License
