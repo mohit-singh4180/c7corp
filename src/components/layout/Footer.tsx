@@ -30,7 +30,7 @@ const SOCIALS = [
   {
     icon: <Instagram className="w-4 h-4" />,
     label: "Instagram",
-    href: "https://www.instagram.com/c7corp/",
+    href: "#",
   },
 ];
 
@@ -85,18 +85,22 @@ export default function Footer() {
               building the future from Dubai and Delhi.
             </p>
             <div className="flex items-center gap-2">
-              {SOCIALS.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-social flex items-center justify-center w-9 h-9 rounded-lg border"
-                  aria-label={`Follow us on ${s.label}`}
-                >
-                  {s.icon}
-                </a>
-              ))}
+              {SOCIALS.map((s) => {
+                const isExternal = s.href.startsWith("http");
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    {...(isExternal
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : { onClick: (e: React.MouseEvent) => e.preventDefault() })}
+                    className="footer-social flex items-center justify-center w-9 h-9 rounded-lg border cursor-pointer"
+                    aria-label={`Follow us on ${s.label}`}
+                  >
+                    {s.icon}
+                  </a>
+                );
+              })}
             </div>
           </div>
 
