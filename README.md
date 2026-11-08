@@ -1,117 +1,116 @@
-🚀 C7 Corp — Modern Business Landing Page
+# C7 Corp — Neural Dark + Constellation
 
-A sleek and professional business landing page built using React, TypeScript, and Vite.
-Designed to represent a modern digital company showcasing products, services, team, and contact information in a clean SaaS-style interface.
+> AI-first company building innovative solutions for modern businesses.
+> Dubai, UAE | Delhi, India
 
-✨ Features
+## Tech Stack
 
-⚡ Fast setup with Vite + React + TypeScript
+- **Framework:** Next.js 15 (App Router) + TypeScript
+- **Styling:** Tailwind CSS 3
+- **3D:** Three.js + @react-three/fiber + @react-three/drei
+- **Animations:** Framer Motion
+- **Forms:** React Hook Form + Zod + Web3Forms
+- **Icons:** Lucide React
+- **Deploy target:** Vercel
 
-🎨 Modern SaaS-style UI
+## Getting Started
 
-📱 Fully responsive on all devices
-
-🧭 Smooth section-based navigation
-
-♻️ Reusable component structure
-
-📬 Functional contact form integration ready
-
-🌈 Gradient accents and clean typography
-
-🧩 Sections Included
-
-Hero Section
-
-About Company
-
-Products / Services
-
-Features / Why Choose Us
-
-Team Members
-
-Contact Form
-
-Footer
-
-🛠️ Tech Stack
-
-React — UI Library
-
-TypeScript — Type Safety
-
-Vite — Fast Build Tool
-
-Tailwind CSS — Styling
-
-Lucide Icons — Icons
-
-📁 Project Structure
-src/
-│
-├── components/     # Reusable UI components
-├── sections/       # Page sections (Hero, About, Contact, etc.)
-├── assets/         # Images and static files
-├── lib/            # Utility functions
-├── types/          # TypeScript types
-└── main.tsx        # App entry point
-
-🚀 Getting Started
-1️⃣ Clone Repository
-git clone https://github.com/your-username/c7-corp-landing.git
-cd c7-corp-landing
-
-2️⃣ Install Dependencies
+```bash
+# Install dependencies
 npm install
 
-3️⃣ Run Development Server
+# Run dev server
 npm run dev
 
-
-App will run at:
-
-http://localhost:8080
-
-🏗️ Production Build
+# Build for production
 npm run build
 
+# Start production server
+npm start
+```
 
-Preview build:
+## Project Structure
 
-npm run preview
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx          # Root layout (fonts, metadata, JSON-LD)
+│   ├── page.tsx            # Home page (hero + all sections)
+│   ├── not-found.tsx       # Custom 404
+│   ├── sitemap.ts          # Auto-generated sitemap
+│   ├── robots.ts           # Robots.txt
+│   ├── about/              # About page
+│   ├── careers/            # Careers + open roles
+│   ├── contact/            # Contact form
+│   ├── products/           # Products hub + individual pages
+│   │   ├── ai-pulse/
+│   │   ├── c7-connect/
+│   │   ├── c7-analytics/
+│   │   └── c7-workspace/   # Coming soon + waitlist
+│   ├── privacy/            # Legal template pages
+│   ├── terms/
+│   ├── cookies/
+│   └── gdpr/
+├── components/
+│   ├── layout/             # Navbar, Footer
+│   ├── home/               # Home page sections
+│   │   ├── HeroContent.tsx
+│   │   ├── TrustStrip.tsx
+│   │   ├── ProductsSection.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── WhyC7.tsx
+│   │   ├── FoundersSection.tsx
+│   │   └── FinalCTA.tsx
+│   ├── three/              # 3D components
+│   │   ├── ConstellationCanvas.tsx
+│   │   └── ConstellationLoader.tsx
+│   ├── ui/                 # Reusable UI components
+│   │   ├── SectionHeading.tsx
+│   │   └── FadeIn.tsx
+│   ├── ContactForm.tsx
+│   └── WaitlistForm.tsx
+└── app/globals.css         # Design system (Neural Dark tokens)
+```
 
-🌍 Deploy to GitHub Pages
-Step 1 — Update vite.config.ts
-export default defineConfig({
-  base: "/your-repo-name/",
-})
+## Design System: Neural Dark + Constellation
 
-Step 2 — Install gh-pages
-npm install gh-pages --save-dev
+- **Background:** `#05060F` (base), `#0B0D1C` (surface), `#11142A` (elevated)
+- **Brand gradient:** Indigo `#4F46E5` → Violet `#7C3AED` → Magenta `#A855F7`
+- **Accent:** Cyan `#22D3EE` (highlights & data)
+- **Text:** `#F5F6FF` (primary), `#A9AECB` (secondary), `#6B7194` (muted)
+- **Fonts:** Space Grotesk (display), Inter (body)
+- **Glass cards:** `rgba(255,255,255,0.04)` + backdrop-blur
 
-Step 3 — Add Scripts in package.json
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "deploy": "gh-pages -d dist"
-}
+## Manual Tasks
 
-Step 4 — Deploy
-npm run build
-npm run deploy
+Before going live, you must:
 
-📬 Contact Form
+1. **Real founder photos** — Add photos at:
+   - `/public/team/mohit-singh.jpg`
+   - `/public/team/ajay-singh.jpg`
 
-You can integrate:
+2. **LinkedIn URLs** — Update LinkedIn links in:
+   - `src/components/home/FoundersSection.tsx`
+   - `src/app/about/page.tsx`
 
-Web3Forms
+3. **Legal review** — All legal pages (`/privacy`, `/terms`, `/cookies`, `/gdpr`) contain template text marked `[LEGAL TEXT TO BE REVIEWED]`. Have a lawyer review before publication.
 
-EmailJS
+4. **Booking URL** — Replace the placeholder in `src/app/contact/page.tsx` with a real booking link (e.g., Calendly).
 
-Custom backend API
+5. **Instagram URL** — Update the Instagram link in `src/components/layout/Footer.tsx` (currently `#`).
 
-📄 License
+6. **Environment variables** — If switching from Web3Forms, update the API key in `ContactForm.tsx` and `WaitlistForm.tsx`.
 
-MIT License
+7. **Real metrics** — The Trust Strip only uses verified facts. Add real metrics/logos when available.
+
+## Deploy to Vercel
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+Or connect the GitHub repo to Vercel for automatic deployments.
