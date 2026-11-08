@@ -30,7 +30,7 @@ const SOCIALS = [
   {
     icon: <Instagram className="w-4 h-4" />,
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/c7corp/",
   },
 ];
 

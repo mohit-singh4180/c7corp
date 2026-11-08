@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface FloatingOrbsProps {
   /** Color theme: 'violet' | 'coral' | 'gold' */
@@ -45,6 +45,7 @@ export default function FloatingOrbs({
   count = 3,
   className = "",
 }: FloatingOrbsProps) {
+  const shouldReduceMotion = useReducedMotion();
   const colors = THEMES[theme];
   const orbCount = Math.min(count, ORB_CONFIGS.length);
 
@@ -69,17 +70,25 @@ export default function FloatingOrbs({
               background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
               filter: "blur(40px)",
             }}
-            animate={{
-              x: [0, 30, -20, 10, 0],
-              y: [0, -20, 15, -10, 0],
-              scale: [1, 1.15, 0.95, 1.1, 1],
-            }}
-            transition={{
-              duration: config.duration,
-              delay: config.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    x: [0, 30, -20, 10, 0],
+                    y: [0, -20, 15, -10, 0],
+                    scale: [1, 1.15, 0.95, 1.1, 1],
+                  }
+            }
+            transition={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    duration: config.duration,
+                    delay: config.delay,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }
+            }
           />
         );
       })}

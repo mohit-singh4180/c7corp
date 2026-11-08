@@ -2,91 +2,99 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://c7corp.com";
-  const now = new Date();
+  // Stable dates ensure search engines accurately track content updates
+  const siteUpdated = new Date("2026-11-08");
+  const legalUpdated = new Date("2026-01-15");
 
   return [
-    { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: baseUrl, lastModified: siteUpdated, changeFrequency: "weekly", priority: 1 },
     {
       url: `${baseUrl}/products`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/products/book-around-you`,
+      lastModified: siteUpdated,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/products/ai-pulse`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/products/c7-connect`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/products/c7-analytics`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/products/c7-workspace`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/features`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/team`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/careers`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: now,
+      lastModified: siteUpdated,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: now,
+      lastModified: legalUpdated,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: now,
+      lastModified: legalUpdated,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/cookies`,
-      lastModified: now,
+      lastModified: legalUpdated,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/gdpr`,
-      lastModified: now,
+      lastModified: legalUpdated,
       changeFrequency: "yearly",
       priority: 0.3,
     },

@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     "C7 Corp builds AI-powered web and mobile applications for the next generation of businesses. Headquartered in Dubai with engineering in Delhi.",
   authors: [{ name: "C7 Corp" }],
   keywords: ["AI", "Dubai", "Delhi", "SaaS", "enterprise software", "C7 Corp"],
+  alternates: {
+    canonical: "https://c7corp.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

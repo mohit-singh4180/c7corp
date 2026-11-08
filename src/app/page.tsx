@@ -10,7 +10,6 @@ import WaitlistBanner from "@/components/layout/WaitlistBanner";
 import SectionTransition from "@/components/animations/SectionTransition";
 
 export const metadata: Metadata = {
-  title: "C7 Corp — Innovative Solutions for Modern Businesses",
   description:
     "C7 Corp builds AI-powered web and mobile applications for the next generation of businesses. Get started with our cutting-edge products.",
 };

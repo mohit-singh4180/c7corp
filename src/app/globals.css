@@ -12,7 +12,7 @@
 @layer base {
   html {
     position: relative;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     color-scheme: light;
     overflow-x: hidden;
     max-width: 100vw;
@@ -131,7 +131,8 @@
     border-radius: var(--r-card);
     box-shadow: var(--shadow-card);
     transition: box-shadow var(--dur-micro) var(--ease-out),
-      transform var(--dur-micro) var(--ease-out);
+      transform var(--dur-micro) var(--ease-out),
+      border-color var(--dur-micro) var(--ease-out);
     max-width: 100%;
     overflow: hidden;
   }
@@ -139,6 +140,7 @@
   .card:hover {
     box-shadow: 0 20px 50px rgba(123, 63, 160, 0.14);
     transform: translateY(-2px);
+    border-color: rgba(123, 63, 160, 0.15);
   }
 
   /* ── Eyebrow ── */
@@ -718,17 +720,6 @@
   .linkedin-link:hover {
     color: var(--c-coral);
     transform: translateX(2px);
-  }
-
-  /* ── Card hover glow ── */
-  .card {
-    transition: box-shadow var(--dur-micro) var(--ease-out),
-      transform var(--dur-micro) var(--ease-out),
-      border-color var(--dur-micro) var(--ease-out);
-  }
-
-  .card:hover {
-    border-color: rgba(123, 63, 160, 0.15);
   }
 }
 

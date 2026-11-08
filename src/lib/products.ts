@@ -7,8 +7,6 @@ export const PRODUCTS = [
     id: "book-around-you",
     title: "Book Around You (BAY)",
     slug: "book-around-you",
-    tagline:
-      "A two-sided booking platform where people discover and book nearby gyms, classes, and study spaces, and businesses onboard their venues and manage customers in one place.",
     description:
       "A two-sided booking platform where people discover and book nearby gyms, classes, and study spaces, and businesses onboard their venues and manage customers in one place.",
     features: [
@@ -26,7 +24,6 @@ export const PRODUCTS = [
     id: "ai-pulse",
     title: "AI Pulse",
     slug: "ai-pulse",
-    tagline: "A global source for machine learning news, covering innovations, research trends, and AI developments from around the world.",
     description:
       "A global source for machine learning news, covering innovations, research trends, and AI developments from around the world.",
     features: [
@@ -43,7 +40,6 @@ export const PRODUCTS = [
     id: "c7-connect",
     title: "C7 Connect",
     slug: "c7-connect",
-    tagline: "Real-time collaboration platform that brings your team together. Share files, manage projects, and communicate seamlessly across departments and time zones.",
     description:
       "Real-time collaboration platform that brings your team together. Share files, manage projects, and communicate seamlessly across departments and time zones.",
     features: [
@@ -59,7 +55,6 @@ export const PRODUCTS = [
     id: "c7-analytics",
     title: "C7 Analytics",
     slug: "c7-analytics",
-    tagline: "Transform raw data into actionable insights with powerful visualization tools. Make informed decisions faster with real-time dashboards and predictive analytics.",
     description:
       "Transform raw data into actionable insights with powerful visualization tools. Make informed decisions faster with real-time dashboards and predictive analytics.",
     features: [
@@ -75,7 +70,6 @@ export const PRODUCTS = [
     id: "c7-workspace",
     title: "C7 Workspace",
     slug: "c7-workspace",
-    tagline: "Transform your workflow with our AI-powered productivity suite designed for distributed teams and modern enterprises.",
     description:
       "Transform your workflow with our AI-powered productivity suite designed for distributed teams and modern enterprises.",
     features: [

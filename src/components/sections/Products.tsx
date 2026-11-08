@@ -300,6 +300,7 @@ export default function Products() {
                       {product.features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-xs" style={{ color: "var(--c-muted)" }}>
                           <span
+                            aria-hidden="true"
                             className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                             style={{ background: "var(--c-coral)" }}
                           />
