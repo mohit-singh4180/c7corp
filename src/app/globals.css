@@ -1,0 +1,808 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ─────────────────────────────────────────────────────────
+   C7 Corp — Sunset Skyline Global Styles
+   ───────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    position: relative;
+    scroll-behavior: smooth;
+    color-scheme: light;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    background-color: var(--c-white);
+    color: var(--c-ink);
+    font-family: "Poppins", system-ui, -apple-system, sans-serif;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  h1 {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--c-white);
+  }
+
+  h2 {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--c-night);
+  }
+
+  h3 {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    color: var(--c-night);
+  }
+
+  p {
+    color: var(--c-muted);
+  }
+
+  ::selection {
+    background-color: rgba(123, 63, 160, 0.25);
+    color: var(--c-night);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--c-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+
+  /* ── Section layout ── */
+  .section-wrap {
+    padding: var(--sec-y) max(1.5rem, calc((100vw - var(--maxw)) / 2 + 1.5rem));
+  }
+
+  .section-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+
+  /* ── Background alternation ── */
+  .bg-cream {
+    background-color: var(--c-cream);
+  }
+
+  .bg-night {
+    background-color: var(--c-night);
+  }
+
+  .bg-sunset {
+    background: var(--g-sunset);
+  }
+
+  .bg-skyline-theme {
+    background-color: #10143a;
+    background-image: url('/hero-skyline-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+  }
+
+  @media (max-width: 768px) {
+    .bg-skyline-theme {
+      background-image: url('/hero-skyline-mobile.webp');
+      background-position: center bottom;
+      background-size: cover;
+    }
+  }
+
+  /* ── Accent text ── */
+  .text-accent {
+    background: var(--g-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold {
+    color: var(--c-gold);
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-card);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--dur-micro) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out);
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    box-shadow: 0 20px 50px rgba(123, 63, 160, 0.14);
+    transform: translateY(-2px);
+  }
+
+  /* ── Eyebrow ── */
+  .eyebrow {
+    display: inline-block;
+    font-size: var(--fs-eye);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-coral);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--r-pill);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1;
+    min-height: 48px;
+    cursor: pointer;
+    transition:
+      transform var(--dur-micro) var(--ease-out),
+      box-shadow var(--dur-micro) var(--ease-out),
+      background-color var(--dur-micro) var(--ease-out);
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid var(--c-gold);
+    outline-offset: 3px;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  /* Primary — navy, white text */
+  .btn-primary {
+    background-color: var(--c-night);
+    color: var(--c-white);
+    box-shadow: var(--shadow-btn);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--c-indigo);
+    box-shadow: 0 8px 30px rgba(20, 18, 58, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Gold — gold bg, navy text */
+  .btn-gold {
+    background-color: var(--c-gold);
+    color: var(--c-night);
+    box-shadow: 0 4px 20px rgba(255, 210, 122, 0.4);
+  }
+
+  .btn-gold:hover {
+    background-color: #ffdb8e;
+    box-shadow: 0 8px 30px rgba(255, 210, 122, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* OutlineLight — translucent white border, for dark/sunset bgs */
+  .btn-outline-light {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--c-white);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--c-white);
+    transform: translateY(-2px);
+  }
+
+  /* Ghost */
+  .btn-ghost {
+    background: transparent;
+    color: var(--c-night);
+    border: 1.5px solid var(--c-line);
+  }
+
+  .btn-ghost:hover {
+    background: var(--c-cream);
+    border-color: var(--c-coral);
+    color: var(--c-night);
+  }
+
+  /* ── Icon chip ── */
+  .icon-chip {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--r-chip);
+    background: var(--g-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-white);
+    flex-shrink: 0;
+  }
+
+  /* ── Tag / Badge ── */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--r-pill);
+    background: rgba(123, 63, 160, 0.1);
+    color: var(--c-violet);
+    border: 1px solid rgba(123, 63, 160, 0.2);
+  }
+
+  .tag-coral {
+    background: rgba(255, 122, 89, 0.1);
+    color: var(--c-coral);
+    border-color: rgba(255, 122, 89, 0.2);
+  }
+
+  .tag-gold {
+    background: rgba(255, 210, 122, 0.15);
+    color: #a07820;
+    border-color: rgba(255, 210, 122, 0.3);
+  }
+
+  /* ── Input ── */
+  .input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--r-chip);
+    border: 1.5px solid var(--c-line);
+    background: var(--c-white);
+    color: var(--c-ink);
+    font-size: var(--fs-body);
+    font-family: inherit;
+    transition: border-color var(--dur-micro) var(--ease-out),
+      box-shadow var(--dur-micro) var(--ease-out);
+    outline: none;
+  }
+
+  .input::placeholder {
+    color: var(--c-muted);
+    opacity: 0.7;
+  }
+
+  .input:focus {
+    border-color: var(--c-coral);
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.15);
+  }
+
+  .input-error {
+    border-color: #ef4444;
+  }
+
+  .input-error:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+  }
+
+  /* ── StatsBar ── */
+  .stats-bar {
+    background-color: var(--c-night);
+    color: var(--c-white);
+  }
+
+  /* ── Skip to content ── */
+  .skip-link {
+    position: absolute;
+    top: -60px;
+    left: 1rem;
+    z-index: 200;
+    padding: 0.5rem 1rem;
+    border-radius: var(--r-chip);
+    background: var(--c-gold);
+    color: var(--c-night);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: top 0.2s;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* ── Nav scrolled glass ── */
+  .nav-glass {
+    background: rgba(16, 20, 58, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 768px) {
+    .nav-glass {
+      background: #10143a;
+    }
+  }
+
+  /* ── Skyline wrapper ── */
+  .skyline-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── HubsStrip ── */
+  .hubs-arc-path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw-arc 1.4s var(--ease-out) 0.3s forwards;
+  }
+
+  @keyframes draw-arc {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* ── Count-up number ── */
+  .count-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--c-gold);
+    line-height: 1;
+  }
+
+  /* ── Section fade-up (pure CSS fallback) ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Prose on legal pages ── */
+  .prose-sunset h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--c-night);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-sunset p {
+    color: var(--c-muted);
+    line-height: var(--lh-body);
+    margin-bottom: 1rem;
+  }
+
+  .prose-sunset a {
+    color: var(--c-coral);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ── Shooting star (waitlist banner) ── */
+  @keyframes shoot {
+    0% {
+      transform: translate(0, 0) rotate(-30deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(300px, 100px) rotate(-30deg);
+      opacity: 0;
+    }
+  }
+
+  .shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--c-gold));
+    border-radius: 2px;
+    animation: shoot 0.8s ease-out forwards;
+  }
+
+  /* ── Hero entrance animations ── */
+  @keyframes hero-fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-fade-up-delay {
+
+    0%,
+    20% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-cta-pop {
+
+    0%,
+    30% {
+      opacity: 0;
+      transform: translateY(15px) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .hero-title-enter {
+    animation: hero-fade-up 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s both;
+  }
+
+  .hero-subtitle-enter {
+    animation: hero-fade-up-delay 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s both;
+  }
+
+  .hero-cta-enter {
+    animation: hero-cta-pop 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s both;
+  }
+
+  /* ── Hero badge glow ── */
+  @keyframes badge-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    }
+
+    50% {
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.15), 0 0 48px rgba(254, 208, 120, 0.08);
+    }
+  }
+
+  .hero-badge-glow {
+    animation: hero-fade-up 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s both,
+      badge-glow 4s ease-in-out infinite 1s;
+  }
+
+  /* ── CTA glow on hover ── */
+  @keyframes cta-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 4px 22px rgba(234, 176, 74, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    50% {
+      box-shadow: 0 6px 30px rgba(234, 176, 74, 0.65), 0 0 50px rgba(247, 206, 122, 0.3);
+    }
+  }
+
+  .cta-glow:hover {
+    animation: cta-pulse 2s ease-in-out infinite;
+  }
+
+  /* ── Soft pulsing gold glow for Waitlist CTA ── */
+  @keyframes gold-pulse-soft {
+
+    0%,
+    100% {
+      box-shadow: 0 4px 18px rgba(234, 176, 74, 0.45), 0 0 12px rgba(247, 206, 122, 0.25), 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    50% {
+      box-shadow: 0 6px 26px rgba(234, 176, 74, 0.75), 0 0 30px rgba(247, 206, 122, 0.6), 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  .gold-glow-pulse {
+    animation: gold-pulse-soft 2.8s ease-in-out infinite;
+  }
+
+  /* ── Skyline rise-up animation ── */
+  @keyframes skyline-rise {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .skyline-rise {
+    animation: skyline-rise 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s both;
+  }
+
+
+
+  /* ── Step node pulse ── */
+  @keyframes step-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 8px 24px rgba(123, 63, 160, 0.25);
+    }
+
+    50% {
+      box-shadow: 0 8px 32px rgba(123, 63, 160, 0.4), 0 0 50px rgba(123, 63, 160, 0.1);
+    }
+  }
+
+  .step-node-pulse {
+    animation: step-pulse 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .step-node-pulse:hover {
+    transform: scale(1.1);
+  }
+
+  /* ── Step ring spin ── */
+  @keyframes ring-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .step-ring-spin {
+    animation: ring-spin 12s linear infinite;
+  }
+
+  /* ── Animated gradient line ── */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animated-gradient-line {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  /* ── Shimmer line ── */
+  @keyframes shimmer-sweep {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .shimmer-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer-sweep 3s ease-in-out infinite;
+  }
+
+  /* ── Stats item entrance ── */
+  @keyframes stats-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stats-item-enter {
+    animation: stats-enter 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  /* ── Glow border spin (for GlowBorder component) ── */
+  @property --glow-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes glow-spin {
+    0% {
+      --glow-angle: 0deg;
+    }
+
+    100% {
+      --glow-angle: 360deg;
+    }
+  }
+
+  /* ── Footer social icons 3D hover ── */
+  .footer-social {
+    color: rgba(255, 247, 239, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .footer-social:hover {
+    color: var(--c-gold);
+    border-color: rgba(254, 208, 120, 0.3);
+    background: rgba(254, 208, 120, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(254, 208, 120, 0.15);
+  }
+
+  /* ── Footer links ── */
+  .footer-link {
+    color: rgba(255, 247, 239, 0.6);
+    transition: color 0.2s ease, transform 0.2s ease, opacity 0.1s ease;
+    display: inline-block;
+  }
+
+  .footer-link:hover {
+    color: var(--c-gold);
+    transform: translateX(3px);
+  }
+
+  .footer-link:active {
+    color: var(--c-white);
+    transform: translateX(3px) scale(0.96);
+    opacity: 0.8;
+  }
+
+  /* ── LinkedIn link ── */
+  .linkedin-link {
+    color: var(--c-violet);
+    transition: all 0.2s ease;
+  }
+
+  .linkedin-link:hover {
+    color: var(--c-coral);
+    transform: translateX(2px);
+  }
+
+  /* ── Card hover glow ── */
+  .card {
+    transition: box-shadow var(--dur-micro) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out),
+      border-color var(--dur-micro) var(--ease-out);
+  }
+
+  .card:hover {
+    border-color: rgba(123, 63, 160, 0.15);
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hubs-arc-path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
+
+/* ── Custom scrollbar (light theme) ── */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(123, 63, 160, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 63, 160, 0.5);
+}
+
+/* ── Dropdown custom scrollbar ── */
+.dropdown-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(123, 63, 160, 0.4) transparent;
+  overscroll-behavior: contain;
+}
+
+.dropdown-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  margin: 6px 0;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+  background: rgba(123, 63, 160, 0.4);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 122, 89, 0.75);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}

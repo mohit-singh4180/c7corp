@@ -1,0 +1,55 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   C7 Corp — Sunset Skyline Design Tokens (single source of truth)
+   All hex values live here; tailwind.config.ts reads them as CSS variables.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Palette */
+  --c-night: #13123a;
+  --c-indigo: #1d1b4b;
+  --c-violet: #7b3fa0;
+  --c-coral: #ff7a59;
+  --c-gold: #fed078;
+  --c-cream: #fff7ef;
+  --c-white: #ffffff;
+  --c-line: #f1e2d3;
+  --c-ink: #13123a;
+  --c-muted: #5a5578;
+
+  /* Gradients & Themes */
+  --g-sunset: linear-gradient(180deg, #2b1f55 0%, #3e266a 12%, #583180 25%, #773d97 38%, #9e4e8c 52%, #cb6274 66%, #ed7161 80%, #ff8c5f 92%, #ffa068 100%);
+  --g-accent: linear-gradient(90deg, #7b3fa0, #ff7a59);
+  --g-gold: linear-gradient(90deg, #fed078, #ffb347);
+  --bg-skyline-theme: #10143a url('/hero-skyline-bg.webp') no-repeat center bottom / cover;
+
+  /* Radius */
+  --r-card: 22px;
+  --r-pill: 999px;
+  --r-chip: 14px;
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px rgba(123, 63, 160, 0.08);
+  --shadow-glow: 0 0 40px rgba(255, 122, 89, 0.15);
+  --shadow-btn: 0 4px 20px rgba(20, 18, 58, 0.25);
+
+  /* Layout */
+  --sec-y: 84px;
+  --sec-x: 100px;
+  --maxw: 1280px;
+  --nav-h: 72px;
+
+  /* Typography scale */
+  --fs-h1: clamp(36px, 6vw, 64px);
+  --fs-h2: clamp(28px, 4vw, 42px);
+  --fs-h3: 21px;
+  --fs-body: 16px;
+  --fs-eye: 12px;
+  --lh-h1: 1.08;
+  --lh-h2: 1.1;
+  --lh-body: 1.65;
+
+  /* Motion */
+  --dur-micro: 200ms;
+  --dur-reveal: 700ms;
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
