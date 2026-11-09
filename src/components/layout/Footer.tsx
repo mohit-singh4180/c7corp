@@ -69,11 +69,12 @@ export default function Footer() {
               aria-label="C7 Corp home"
             >
               <Image
-                src="/favicon.ico"
-                alt=""
+                src="/logo.png"
+                alt="C7 Corp logo"
                 width={28}
                 height={28}
                 className="w-7 h-7 rounded-md object-contain transition-transform duration-200 group-hover:scale-105"
+                unoptimized
               />
               <span className="tracking-tight text-xl font-bold">Corp</span>
             </Link>

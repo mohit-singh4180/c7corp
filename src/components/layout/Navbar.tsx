@@ -178,7 +178,7 @@ export default function Navbar() {
         style={{ maxWidth: "var(--maxw)" }}
         aria-label="Main navigation"
       >
-        {/* Logo with favicon icon */}
+        {/* Logo with clean logo.png icon */}
         <Link
           href="/"
           onClick={(e) => handleNavClick(e, "hero")}
@@ -186,11 +186,13 @@ export default function Navbar() {
           aria-label="C7 Corp home"
         >
           <Image
-            src="/favicon.ico"
-            alt=""
+            src="/logo.png"
+            alt="C7 Corp logo"
             width={28}
             height={28}
             className="w-7 h-7 rounded-md object-contain transition-transform duration-200 group-hover:scale-105"
+            unoptimized
+            priority
           />
           <span className="text-white tracking-tight text-xl font-bold">Corp</span>
         </Link>
